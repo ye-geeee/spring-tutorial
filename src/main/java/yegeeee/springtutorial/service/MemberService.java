@@ -1,15 +1,22 @@
 package yegeeee.springtutorial.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import yegeeee.springtutorial.domain.Member;
 import yegeeee.springtutorial.repository.MemberRepository;
-import yegeeee.springtutorial.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
-    private final MemberRepository memoryRepository = new MemoryMemberRepository();
+    private final MemberRepository memoryRepository;
+
+    @Autowired
+    public MemberService(MemberRepository memoryRepository) {
+        this.memoryRepository = memoryRepository;
+    }
 
     /**
      * 회원 가입

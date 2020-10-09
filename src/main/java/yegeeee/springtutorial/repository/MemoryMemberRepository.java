@@ -1,11 +1,13 @@
 package yegeeee.springtutorial.repository;
 
+import org.springframework.stereotype.Repository;
 import yegeeee.springtutorial.domain.Member;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new ConcurrentHashMap<>();
