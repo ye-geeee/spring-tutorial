@@ -8,12 +8,10 @@ import yegeeee.springtutorial.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
 
     private final MemberRepository memoryRepository;
 
-    @Autowired
     public MemberService(MemberRepository memoryRepository) {
         this.memoryRepository = memoryRepository;
     }
