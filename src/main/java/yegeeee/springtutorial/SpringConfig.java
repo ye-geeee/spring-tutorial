@@ -3,6 +3,7 @@ package yegeeee.springtutorial;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import yegeeee.springtutorial.repository.JdbcMemberRepository;
+import yegeeee.springtutorial.repository.JdbcTemplateMemberRepository;
 import yegeeee.springtutorial.repository.MemberRepository;
 import yegeeee.springtutorial.repository.MemoryMemberRepository;
 import yegeeee.springtutorial.service.MemberService;
@@ -25,6 +26,6 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }

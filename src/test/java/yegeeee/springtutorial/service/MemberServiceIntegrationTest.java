@@ -20,12 +20,6 @@ public class MemberServiceIntegrationTest {
     @Autowired
     MemberRepository repository;
 
-    @BeforeEach
-    public void beforeEach() {
-        repository = new MemoryMemberRepository();
-        memberService = new MemberService(repository);
-    }
-
     @Test
     public void join() {
         // given
