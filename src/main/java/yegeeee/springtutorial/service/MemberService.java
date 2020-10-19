@@ -22,9 +22,17 @@ public class MemberService {
      * 회원 가입
      */
     public Long join(Member member) {
-        validateDuplicateMember(member);
 
-        memoryRepository.save(member);
+        long start = System.currentTimeMillis();
+        try {
+            validateDuplicateMember(member);
+
+            memoryRepository.save(member);
+        } finally {
+            long end = System.currentTimeMillis();
+            long timems = end - start;
+            System.out.println("join = " + timems + "ms");
+        }
         return member.getId();
     }
 
